@@ -3,12 +3,16 @@
 # WESTERN GOVERNOR UNIVERSITY 
 ## D287 – JAVA FRAMEWORKS
 C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+    
     Mainscreen.html, line 14: Updated Title to: "Gaming Controller Shop"
     Mainscreen.hmtl, line 24: Updated H1 to "Gaming Controller shop"
     Mainscreen.hmtl, line 15-19: Added a style attribute containing body, updating background color to lemonchiffon.
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-
+    
+    created about.html: Added a header for the about page, along with a descriptive body for the website and a link to the mainscreen.
+    created aboutPageController.java: Created controller class for the /about page with method mapping to /about, returning about.html
+    mainscreen.html, line 25: Added an "About" button with reference to /about page below mainscreen header.
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
