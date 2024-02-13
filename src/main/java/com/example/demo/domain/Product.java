@@ -90,6 +90,15 @@ public class Product implements Serializable {
     public String toString(){
         return this.name;
     }
+
+    public boolean buyProduct() {
+        if (this.inv >= 1) {
+            this.inv--;
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

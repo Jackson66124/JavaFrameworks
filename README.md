@@ -20,9 +20,13 @@ E.  Add a sample inventory appropriate for your chosen store to the application.
     BootStrapData.java, line 76-88: Created 5 product objects and added to productRepository
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
-•  The “Buy Now” button must be next to the buttons that update and delete products.
-•  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
-•  Display a message that indicates the success or failure of a purchase.
+
+    created buyNowError.html: error page for unsuccessful purchase
+    created buyNowSuccess.html: confirmation page for successful purchase
+    mainscreen.html line 89: added "Buy Now" button with endpoint /buyproduct withproduct id
+    AddProductController.java line 129-140: Added method buyProduct mapped to "/buyproduct" that calls buyProduct method in Product.java, returns error or success html.
+    Product.java line 93-101: Created method buyProduct, decrements the product inv if the inv >=1.
+    
 
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
