@@ -1,8 +1,10 @@
 package com.example.demo.bootstrap;
 
+import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
+import com.example.demo.repositories.InhousePartRepository;
 import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
@@ -39,33 +41,51 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
+        InhousePart joystick= new InhousePart();
+        joystick.setName("Joystick"); joystick.setInv(23); joystick.setPrice(5.00); joystick.setId(100L);
+        partRepository.save(joystick);
+
+        InhousePart trigger= new InhousePart();
+        trigger.setName("Trigger"); trigger.setInv(14); trigger.setPrice(8.00); trigger.setId(101L);
+        partRepository.save(trigger);
+
+        InhousePart button= new InhousePart();
+        button.setName("Button"); button.setInv(25); button.setPrice(3.00); button.setId(102L);
+        partRepository.save(button);
+
+        InhousePart dpad= new InhousePart();
+        dpad.setName("D-Pad"); dpad.setInv(20); dpad.setPrice(10.00); dpad.setId(103L);
+        partRepository.save(dpad);
+
+        InhousePart bumper= new InhousePart();
+        bumper.setName("Bumper"); bumper.setInv(12); bumper.setPrice(7.00); bumper.setId(104L);
+        partRepository.save(bumper);
+
         OutsourcedPart thePart=null;
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             if(part.getName().equals("out test"))thePart=part;
         }
 
-        System.out.println(thePart.getCompanyName());
-        */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+//        System.out.println(thePart.getCompanyName());
+//        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
+
+        Product xboxController= new Product("Xbox Controller",60.0,20);
+        Product playStationController= new Product("Playstation Controller",60.0,20);
+        Product switchController= new Product("Switch Controller",50.0,25);
+        Product playStationProController= new Product("Playstation Pro Controller",90.0,15);
+        Product xboxProController= new Product("Xbox Pro Controller",90.0,15);
+
+        productRepository.save(xboxController);
+        productRepository.save(playStationController);
+        productRepository.save(switchController);
+        productRepository.save(playStationProController);
+        productRepository.save(xboxProController);
+
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
