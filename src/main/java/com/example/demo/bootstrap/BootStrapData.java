@@ -47,6 +47,8 @@ public class BootStrapData implements CommandLineRunner {
             joystick.setInv(23);
             joystick.setPrice(5.00);
             joystick.setId(100L);
+            joystick.setMinInv(5);
+            joystick.setMaxInv(95);
             partRepository.save(joystick);
 
             InhousePart trigger = new InhousePart();
@@ -54,6 +56,8 @@ public class BootStrapData implements CommandLineRunner {
             trigger.setInv(14);
             trigger.setPrice(8.00);
             trigger.setId(101L);
+            trigger.setMinInv(3);
+            trigger.setMaxInv(75);
             partRepository.save(trigger);
 
             InhousePart button = new InhousePart();
@@ -61,6 +65,8 @@ public class BootStrapData implements CommandLineRunner {
             button.setInv(25);
             button.setPrice(3.00);
             button.setId(102L);
+            button.setMinInv(5);
+            button.setMaxInv(55);
             partRepository.save(button);
 
             InhousePart dpad = new InhousePart();
@@ -68,6 +74,8 @@ public class BootStrapData implements CommandLineRunner {
             dpad.setInv(20);
             dpad.setPrice(10.00);
             dpad.setId(103L);
+            dpad.setMinInv(0);
+            dpad.setMaxInv(80);
             partRepository.save(dpad);
 
             InhousePart bumper = new InhousePart();
@@ -75,6 +83,8 @@ public class BootStrapData implements CommandLineRunner {
             bumper.setInv(12);
             bumper.setPrice(7.00);
             bumper.setId(104L);
+            bumper.setMinInv(5);
+            bumper.setMaxInv(60);
             partRepository.save(bumper);
         }
 

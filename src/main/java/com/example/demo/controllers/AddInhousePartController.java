@@ -43,6 +43,9 @@ public class AddInhousePartController{
             return "InhousePartForm";
         }
         else{
+            if(!part.checkInventory()) {
+                return "InhousePartForm";
+            }
         InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
         InhousePart ip=repo.findById((int)part.getId());
         if(ip!=null)part.setProducts(ip.getProducts());
