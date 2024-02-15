@@ -71,3 +71,5 @@ I.  Add at least two unit tests for the maximum and minimum fields to the PartTe
     PartTest.java, line 102-116: Added unit test for minInv in checkInventory method, checks that inv < minInv will return false
 
 J.  Remove the class files for any unused validators in order to clean your code.
+    
+    Removed unused Validator class DeletePartValidator.java
