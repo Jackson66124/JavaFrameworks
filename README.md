@@ -66,6 +66,8 @@ H.  Add validation for between or at the maximum and minimum fields. The validat
     ValidEnufParts.java, line 20: Updated error message with inventory out of range 
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-
+    
+    PartTest.java, line 86-100: Added unit test for maxInv in checkInventory method, checks that inv > maxInv will return false
+    PartTest.java, line 102-116: Added unit test for minInv in checkInventory method, checks that inv < minInv will return false
 
 J.  Remove the class files for any unused validators in order to clean your code.

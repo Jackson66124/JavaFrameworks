@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Project: demoDarbyFrameworks2-master
@@ -81,6 +81,38 @@ class PartTest {
         assertEquals(price,partIn.getPrice());
         partOut.setPrice(price);
         assertEquals(price,partOut.getPrice());
+    }
+
+    @Test
+    void checkInventoryMax() {
+        int highInv = 1;
+        int inv = 5;
+        int minInv = 2;
+        int maxInv = 10;
+        partIn.setInv(inv);
+        partIn.setMinInv(minInv);
+        partIn.setMaxInv(maxInv);
+        assertTrue(partIn.checkInventory());//Inventory within range should return true
+        partOut.setMaxInv(maxInv);
+        partOut.setMinInv(minInv);
+        partOut.setInv(highInv);
+        assertFalse(partOut.checkInventory());//Inventory outside range should return false
+    }
+
+    @Test
+    void checkInventoryMin() {
+    int lowInv = 11;
+    int inv = 5;
+    int minInv = 2;
+    int maxInv = 10;
+    partIn.setInv(inv);
+    partIn.setMinInv(minInv);
+    partIn.setMaxInv(maxInv);
+    assertTrue(partIn.checkInventory());//Inventory within range should return true
+    partOut.setMaxInv(maxInv);
+    partOut.setMinInv(minInv);
+    partOut.setInv(lowInv);
+    assertFalse(partOut.checkInventory());//Inventory outside range should return false
     }
 
     @Test
