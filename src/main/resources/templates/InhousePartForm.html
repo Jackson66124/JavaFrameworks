@@ -27,7 +27,9 @@
     <p><input type="text" path="maxINv" th:field="*{maxInv}" placeholder= "Maximum Inventory" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Maximum Inventory Error</p>
 
-<p></p>
+    <p th:if="${error}" th:text="${error}" >Error</p>
+
+
 
 <p><input type="submit" value="Submit" /></p>
 </form>

@@ -43,8 +43,14 @@ public class AddInhousePartController{
             return "InhousePartForm";
         }
         else{
-            if(!part.checkInventory()) {
-                return "InhousePartForm";
+            if (!part.checkInventory()) {
+                if (part.getInv() < part.getMinInv()) {
+                    theModel.addAttribute("error", "Error, inventory value must be greater than or equal to minimum. Inventory must be in range " + part.getMinInv() + " and " + part.getMaxInv());
+                    return "InhousePartForm";
+                } else if (part.getInv() > part.getMaxInv()) {
+                    theModel.addAttribute("error", "Error, inventory value must be less than or equal to maximum. Inventory must be in range " + part.getMinInv() + " and " + part.getMaxInv());
+                    return "InhousePartForm";
+                }
             }
         InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
         InhousePart ip=repo.findById((int)part.getId());
