@@ -73,3 +73,7 @@ I.  Add at least two unit tests for the maximum and minimum fields to the PartTe
 J.  Remove the class files for any unused validators in order to clean your code.
     
     Removed unused Validator class DeletePartValidator.java
+
+Revision
+
+    InhousePartForm.html, line 24: Added field partId
